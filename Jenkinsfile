@@ -17,7 +17,7 @@ environment {
         stage('Build') {
             steps {
                 
-                git branch: 'main', credentialsId: 'github', url: '$giturl'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/mrashutoshmuduli/my-project.git'
 
                 
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
