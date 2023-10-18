@@ -6,7 +6,10 @@ pipeline {
         maven "maven-3.2"
         jdk "jdk11"
     }
-
+parameters {
+        string(Project: 'MyProject', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+        string(name: 'URL', defaultValue: 'https://github.com/mrashutoshmuduli/my-project', description: 'Who should I say hello to?')
+    }
     stages {
         stage('Build') {
             steps {
