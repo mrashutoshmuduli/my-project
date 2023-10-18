@@ -7,9 +7,8 @@ pipeline {
         jdk "jdk11"
     }
 parameters {
-        string(Project: 'MyProject', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-        string(name: 'URL', defaultValue: 'https://github.com/mrashutoshmuduli/my-project', description: 'Who should I say hello to?')
-    }
+  string defaultValue: 'giturl', description: 'Repourl', name: 'https://github.com/mrashutoshmuduli/my-project.git'
+}
     stages {
         stage('Build') {
             steps {
