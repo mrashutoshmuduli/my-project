@@ -10,15 +10,18 @@ parameters {
   string defaultValue: 'giturl', description: 'Repourl', name: 'https://github.com/mrashutoshmuduli/my-project.git'
   string defaultValue: 'Branch', description: 'Branch Name', name: 'main'
 }
+environment {
+  giturl = "https://github.com/mrashutoshmuduli/my-project.git"
+}
     stages {
         stage('Build') {
             steps {
                 
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/mrashutoshmuduli/my-project.git'
+                git branch: 'main', credentialsId: 'github', url: '$giturl'
 
                 
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
-
+                sh "Git URL $giturl"
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
