@@ -8,6 +8,7 @@ pipeline {
     }
 parameters {
   string defaultValue: 'giturl', description: 'Repourl', name: 'https://github.com/mrashutoshmuduli/my-project.git'
+  string defaultValue: 'Branch', description: 'Branch Name', name: 'main'
 }
     stages {
         stage('Build') {
