@@ -4,7 +4,7 @@ pipeline {
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "maven-3"
-        jdk "jdk11"
+       // jdk "jdk11"
     }
 parameters {
   string defaultValue: 'giturl', description: 'Repourl', name: 'https://github.com/mrashutoshmuduli/my-project.git'
