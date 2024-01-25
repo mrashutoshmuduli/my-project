@@ -31,7 +31,11 @@ environment {
 		    echo "WorkSpace:  $WORKSPACE"
             echo "PROJ_NAME: $PROJ_NAME"
 		    echo "BUILD_NUM:$BUILD_NUM"
-		    sh "cd $WORKSPACE && sudo docker build . --no-cache --compress -t $PROJ_NAME:$BUILD_NUM"                
+		    //sh "cd $WORKSPACE && sudo docker build . --no-cache --compress -t $PROJ_NAME:$BUILD_NUM"
+            script {
+                    // Your build commands go here
+                    sh 'docker build -t $PROJ_NAME:$BUILD_NUM .'
+                }
             }	
 	    }
         stage('Push to Docker Hub') {
